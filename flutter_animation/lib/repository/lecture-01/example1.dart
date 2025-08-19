@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_animation/repository/uihelper/uihelper.dart';
 
 class RotatedTriangle extends StatefulWidget {
   const RotatedTriangle({super.key});
@@ -33,6 +34,10 @@ class _RotatedTriangleState extends State<RotatedTriangle>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        title: const Center(child: Text('Example 01')),
+      ),
       body: Center(
           child: AnimatedBuilder(
         animation: _animation,
@@ -54,6 +59,9 @@ class _RotatedTriangleState extends State<RotatedTriangle>
           );
         },
       )),
+      floatingActionButton:
+          UiHelper.customButton(callback: () {}, text: 'Next'),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
